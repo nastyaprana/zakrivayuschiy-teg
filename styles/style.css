@@ -95,7 +95,7 @@
 }
 
 .theme-menu__button:focus-visible {
-  opacity: 1;
+  opacity: 0.6;
 }
 
 .theme-menu__button:disabled {
@@ -110,14 +110,15 @@
   animation: moving 0.5s infinite ease-in-out alternate;
 }
 
-.theme-menu__button:disabled::after {
+.theme-menu__button::after {
   content: "";
-  opacity: 0.6;
+  position: absolute;
   inset-inline-start: 0;
-  inset-block-end: -4px;
-  background-color: var(--accent-color, #000);
-  block-size: 2px;
+  inset-block-end: -3px;
   inline-size: 100%;
+  block-size: 2px;
+  background-color: var(--accent-color, #000);
+  opacity: 0.6;
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.3s ease;
@@ -167,7 +168,6 @@
   background-color: transparent;
   border: none;
   cursor: pointer;
-  transition: outline 0.3s ease;
 }
 
 .card__icon-button:focus {
@@ -221,6 +221,11 @@
   box-shadow: 2px 2px 0 0 var(--accent-color, #000);
 }
 
+	.like-icon {
+	  display: flex;
+	  justify-content: center;
+	}
+
 .button::after {
   position: absolute;
   inset: 0;
@@ -269,6 +274,7 @@
 .save-icon {
   width: 21px;
   height: 21px;
+  color: var(--accent-color, #000);
 }
 
 @media (width < 376px) {
@@ -285,7 +291,7 @@
   }
 
   .content-text:not(:first-child) {
-    padding-block-end: 22px;
+    padding-block-end: 25px;
   }
 
   .footer__button {
@@ -295,5 +301,6 @@
   .save-icon {
     width: 28px;
     height: 28px;
+    color: var(--accent-color, #000);
   }
 }
