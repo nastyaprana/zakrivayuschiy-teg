@@ -221,10 +221,10 @@
   box-shadow: 2px 2px 0 0 var(--accent-color, #000);
 }
 
-	.like-icon {
-	  display: flex;
-	  justify-content: center;
-	}
+.like-icon {
+  display: flex;
+  justify-content: center;
+}
 
 .button::after {
   position: absolute;
@@ -233,7 +233,6 @@
   content: "";
   transform: translateX(-100%);
   transition: transform 0.5s ease-in-out;
-
   scale: 1;
   color: var(--background-color, #fff);
 }
