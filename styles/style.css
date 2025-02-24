@@ -175,12 +175,11 @@
 .content {
   display: flex;
   flex-direction: column;
-  border: 2px solid #000;
   background-color: var(--background-color, #fff);
   padding: 25px;
   margin-bottom: 50px;
   inline-size: 100%;
-  padding-top: 23.5px;
+  padding-top: 25px;
   padding-bottom: 27px;
 }
 
@@ -190,7 +189,7 @@
   font-variation-settings: "wght" var(--text-weight, 400);
 }
 
-.content-short2 .content-text {
+.content-shortsecond .content-text {
   padding-right: 3px;
 }
 
@@ -246,7 +245,6 @@
   transform: translateX(-100%);
   transition: transform 0.5s ease-in-out;
   scale: 1;
-  color: var(--background-color, #fff);
 }
 
 .button:hover::after {
@@ -254,9 +252,7 @@
 }
 
 .button:hover .button__text,
-.button:hover .save-icon,
-.button:hover .form-button__text {
-  color: var(--background-color, #fff);
+.button:hover .save-icon {
   position: relative;
   transition: color 1s ease;
   z-index: 1;
@@ -265,11 +261,13 @@
 .card__like-button {
   background-color: transparent;
   padding-block: 6px;
+  padding-top: 8px;
   border: 2px solid var(--accent-color, #000);
   width: 130px;
   position: relative;
   overflow: hidden;
   cursor: pointer;
+  color: var(--button-text-color, #fff);
 }
 
 .button__text {
@@ -279,8 +277,6 @@
   line-height: 12.6px;
   position: relative;
   z-index: 10;
-  mix-blend-mode: difference;
-  color: var(--button-text-color, #fff);
 }
 
 @supports (mix-blend-mode: difference) {
@@ -300,6 +296,7 @@
   align-items: center;
   border: 2px solid var(--accent-color, #000);
   background-color: var(--background-color, #fff);
+  color: var(--button-text-color, #fff);
   position: relative;
   overflow: hidden;
   cursor: pointer;
@@ -330,7 +327,7 @@
   }
 
   .content {
-    padding: 26px;
+    padding: 26.3px;
   }
 
   .content-short .content-text {
@@ -346,11 +343,11 @@
   }
 
   .content-text:not(:first-child) {
-    padding-block-end: 25px;
+    padding-block-end: 26px;
   }
 
   .footer__button {
-    padding-inline: 18px;
+    padding-inline: 17px;
   }
 
   .save-icon {
@@ -362,34 +359,39 @@
     width: 40px;
     height: 40px;
   }
+
+  .section-block__label {
+    right: 13px;
+    top: 25px;
+  }
 }
 
-.image-2 {
+.filter-grayscale {
   filter: grayscale(70%);
 }
 
-.image-3 {
+.filter-brightness {
   filter: brightness(200%);
 }
 
-.image-4 {
+.filter-hue-rotate {
   filter: hue-rotate(19deg);
 }
 
-.image-5 {
+.filter-invert-saturate {
   filter: invert(0.8) saturate(1.5);
 }
 
-.image-6 {
+.filter-sepia {
   filter: sepia(1.2);
 }
 
-.image-7 {
+.filter-blur {
   filter: blur(15px);
 }
 
-.image-8 {
-  filter: blur(0.1rem) sepia(30%) hue-rotate(19deg);
+.filter-blur-sepia {
+  filter: blur(0.1rem) sepia(30%);
 }
 
 .dialog[open] {
@@ -402,6 +404,7 @@
   gap: 30px;
   z-index: 2;
   max-width: 353px;
+  color: var(--text-color, #000);
 }
 
 .dialog[open]::backdrop {
@@ -424,18 +427,7 @@
   cursor: pointer;
   position: relative;
   overflow: hidden;
-}
-
-.form-button__text {
-  line-height: 12.6px;
-  color: var(--button-text-color, #fff);
-  mix-blend-mode: difference;
-}
-
-@supports (mix-blend-mode: difference) {
-  .form-button__text {
-    mix-blend-mode: difference;
-  }
+  border: 2px solid var(--accent-color, #000);
 }
 
 .dialog-card__image {
@@ -455,10 +447,10 @@
   height: 39px;
 }
 
-@supports ((text-stroke: 1px #fff) or (-webkit-text-stroke: 1px #fff)) {
+@supports ((outline: 1px #fff) or (-webkit-text-stroke: 1px #fff)) {
   .section-block__label {
-    -webkit-text-stroke: 1px #fff;
-    text-stroke: 1px #fff;
+    -webkit-text-stroke: 1px var(--background-color, #fff);
+    outline: 1px var(--background-color, #fff);
     text-shadow: none;
   }
 }
